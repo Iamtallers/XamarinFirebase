@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFirebase.MainPage">
+
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <Image x:Name="imgBanner" Source="banner.png" ></Image>
+                    <Image Margin="0,0,0,10" HeightRequest="100" Source="firebase.png" ></Image>
+                    <Label Margin="0,0,0,10" Text="Firebase Realtime Database" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                    <Entry x:Name="txtFname" Placeholder="First Name"></Entry>
+                    <Entry x:Name="txtLname" Placeholder="Last Name"></Entry>
+                    <Entry x:Name="txtEmail" Placeholder="Email Adress"></Entry>
+                    <Entry x:Name="txtHeight" Placeholder="Height"></Entry>
+                    <Entry x:Name="txtWeight" Placeholder="Weight"></Entry>
+                    <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnAdd" WidthRequest="200" Text="Add" Clicked="BtnAdd_Clicked"/>
+                        <Button x:Name="btnRetrive" WidthRequest="200" Text="Retrive"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnUpdate" WidthRequest="200" Text="Update"  />
+                        <Button x:Name="btnDelete" WidthRequest="200" Text="Delete"  />
+                    </StackLayout>
+
+                    <ListView x:Name="lstPersons">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}"></TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
